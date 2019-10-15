@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://interactable/Treasure.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/objects.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/prototype/treasure.png" type="Texture" id=3]
+[ext_resource path="res://interactable/Interactable.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 16, 16 )
+margin = Rect2( 1, 0, 0, 0 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6, 3 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.0
+
+[node name="Treasure" type="RigidBody2D"]
+position = Vector2( 568, 168 )
+mode = 1
+script = ExtResource( 1 )
+treasure_texture = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -4 )
+vframes = 2
+hframes = 2
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Interactable" type="Area2D" parent="."]
+position = Vector2( 0, -2 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource( 1 )

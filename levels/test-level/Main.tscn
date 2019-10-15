@@ -1,0 +1,304 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://levels/test-level/Map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/ProtoEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/ProtoNPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interactable/Treasure.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/test-level/Act1.gd" type="Script" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 4, 24 )
+
+[node name="Main" type="Node"]
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+
+[node name="LevelSwitcher" parent="Map/Triggers" index="0"]
+editor/display_folded = true
+
+[node name="Env" parent="Map" index="5"]
+editor/display_folded = true
+
+[node name="ProtoEnemy" parent="Map/Env" index="0" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 352, 64 )
+_path_finder = NodePath("../../PathFinding")
+
+[node name="CollisionShape2D" parent="Map/Env/ProtoEnemy" index="2"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="Map/Env/ProtoEnemy" index="7"]
+anims/idle_down = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 5 )
+anims/run_down = SubResource( 6 )
+anims/run_left = SubResource( 7 )
+anims/run_right = SubResource( 8 )
+
+[node name="ProtoEnemy2" parent="Map/Env" index="1" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 156, 340 )
+_path_finder = NodePath("../../PathFinding")
+
+[node name="CollisionShape2D" parent="Map/Env/ProtoEnemy2" index="2"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="Map/Env/ProtoEnemy2" index="7"]
+anims/idle_down = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 5 )
+anims/run_down = SubResource( 6 )
+anims/run_left = SubResource( 7 )
+anims/run_right = SubResource( 8 )
+
+[node name="Player" parent="Map/Env" index="2" instance=ExtResource( 3 )]
+_path_finder = NodePath("../../PathFinding")
+
+[node name="ProtoNPC" parent="Map/Env" index="3" instance=ExtResource( 4 )]
+position = Vector2( 80, 10 )
+_path_finder = NodePath("../../PathFinding")
+
+[node name="Treasure" parent="Map/Env" index="4" instance=ExtResource( 5 )]
+
+[node name="Treasure2" parent="Map/Env" index="5" instance=ExtResource( 5 )]
+position = Vector2( -72, 304 )
+
+[node name="Treasure3" parent="Map/Env" index="6" instance=ExtResource( 5 )]
+position = Vector2( 776, 592 )
+
+[node name="Treasure4" parent="Map/Env" index="7" instance=ExtResource( 5 )]
+position = Vector2( 796, 124 )
+
+[node name="Acts" type="Node2D" parent="."]
+
+[node name="Act1" type="Area2D" parent="Acts"]
+position = Vector2( 136, 56 )
+monitorable = false
+collision_layer = 0
+script = ExtResource( 6 )
+_npc = NodePath("../../Map/Env/ProtoNPC")
+_player = NodePath("../../Map/Env/Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Acts/Act1"]
+shape = SubResource( 9 )
+
+[node name="PlayerPos1" type="Position2D" parent="Acts/Act1"]
+position = Vector2( -56, -40 )
+
+[node name="PlayerPos2" type="Position2D" parent="Acts/Act1"]
+position = Vector2( -42, 0 )
+
+[node name="NPCPos1" type="Position2D" parent="Acts/Act1"]
+position = Vector2( -120, -40 )
+
+[node name="NPCPos2" type="Position2D" parent="Acts/Act1"]
+position = Vector2( -4, 0 )
+
+[editable path="Map"]
+
+[editable path="Map/Env/ProtoEnemy"]
+
+[editable path="Map/Env/ProtoEnemy2"]

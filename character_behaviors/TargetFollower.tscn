@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://character_behaviors/TargetFollower.gd" type="Script" id=1]
+
+
+
+[node name="TargetFollower" type="Node2D"]
+editor/display_folded = true
+position = Vector2( 0, 10.0238 )
+script = ExtResource( 1 )
+_target = NodePath("../../Player")
+
+[node name="TargetTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
